@@ -5,13 +5,13 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-success-100: #49de50;
-  --color-success-200: #42c748;
-  --color-destructive-100: #f75353;
-  --color-destructive-200: #c44141;
+  --color-success-100: #22c55e; /* New success */
+  --color-success-200: #16a34a;
+  --color-destructive-100: #ef4444; /* New destructive */
+  --color-destructive-200: #dc2626;
 
-  --color-primary-100: #dddfff;
-  --color-primary-200: #cac5fe;
+  --color-primary-100: #3b82f6;
+  --color-primary-200: #0184e3;
 
   --color-light-100: #d6e0ff;
   --color-light-400: #6870a6;
@@ -27,6 +27,10 @@
   --bg-pattern: url("/pattern.png");
 }
 
+::selection {
+  background: rgba(0, 0, 0, 0.8); /* Almost pure black but slightly transparent */
+  color: #ffffff; /* Pure white text */
+}
 
 :root {
   --radius: 0.625rem;
@@ -135,6 +139,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -143,7 +148,7 @@
     @apply bg-background text-foreground;
   }
   p {
-    @apply text-light-100;
+    @apply text-dark-100;
   }
   h2 {
     @apply text-3xl font-semibold;
@@ -155,13 +160,13 @@
     @apply list-disc list-inside;
   }
   li {
-    @apply text-light-100;
+    @apply text-dark-200;
   }
 }
 
 @layer components {
   .btn-call {
-    @apply inline-block px-7 py-3 font-bold text-sm leading-5 text-white transition-colors duration-150 bg-success-100 border border-transparent rounded-full shadow-sm focus:outline-none focus:shadow-2xl active:bg-success-200 hover:bg-success-200 min-w-28 cursor-pointer items-center justify-center overflow-visible;
+    @apply inline-block px-7 py-3 font-bold text-sm leading-5 text-white transition-colors duration-150 bg-success-100 border border-transparent rounded-lg shadow-sm focus:outline-none focus:shadow-2xl active:bg-success-200 hover:bg-success-200 min-w-40 cursor-pointer items-center justify-center overflow-visible;
 
     .span {
       @apply bg-success-100 h-[85%] w-[65%];
@@ -169,17 +174,17 @@
   }
 
   .btn-disconnect {
-    @apply inline-block px-7 py-3 text-sm font-bold leading-5 text-white transition-colors duration-150 bg-destructive-100 border border-transparent rounded-full shadow-sm focus:outline-none focus:shadow-2xl active:bg-destructive-200 hover:bg-destructive-200 min-w-28;
+    @apply inline-block px-7 py-3 text-sm font-bold leading-5 text-white transition-colors duration-150 bg-destructive-100 border border-transparent rounded-lg shadow-sm focus:outline-none focus:shadow-2xl active:bg-destructive-200 hover:bg-destructive-200 min-w-40;
   }
 
   .btn-upload {
     @apply flex min-h-14 w-full items-center justify-center gap-1.5 rounded-md;
   }
   .btn-primary {
-    @apply w-fit !bg-primary-200 !text-dark-100 hover:!bg-primary-200/80 !rounded-full !font-bold px-5 cursor-pointer min-h-10;
+    @apply w-fit !bg-blue-500 !text-white hover:!bg-primary-200/80 !rounded-lg !font-bold px-5 cursor-pointer min-h-10;
   }
   .btn-secondary {
-    @apply w-fit !bg-dark-200 !text-primary-200 hover:!bg-dark-200/80 !rounded-full !font-bold px-5 cursor-pointer min-h-10;
+    @apply w-fit !bg-dark-200 !text-light-100 hover:!bg-dark-200/80 !rounded-lg !font-bold px-5 cursor-pointer min-h-10;
   }
 
   .btn-upload {
@@ -198,15 +203,15 @@
     @apply w-full;
 
     .label {
-      @apply !text-light-100 !font-normal;
+      @apply !text-dark-100 !font-normal;
     }
 
     .input {
-      @apply !bg-dark-200 !rounded-full !min-h-12 !px-5 placeholder:!text-light-100;
+      @apply !bg-white !rounded-full !min-h-12 !px-5 placeholder:!text-dark-100;
     }
 
     .btn {
-      @apply !w-full !bg-primary-200 !text-dark-100 hover:!bg-primary-200/80 !rounded-full !min-h-10 !font-bold !px-5 cursor-pointer;
+      @apply !w-full !bg-primary-200 !text-light-100 hover:!bg-primary-200/80 !rounded-lg !min-h-10 !font-bold !px-5 cursor-pointer;
     }
   }
 
@@ -218,7 +223,7 @@
     }
 
     .card-interviewer {
-      @apply flex-center flex-col gap-2 p-7 h-[400px] blue-gradient-dark rounded-lg border-2 border-primary-200/50 flex-1 sm:basis-1/2 w-full;
+      @apply flex-center flex-col gap-2 p-7 h-[400px] dark-gradient rounded-lg border-2 border-gradient flex-1 sm:basis-1/2 w-full;
     }
 
     .avatar {
@@ -234,7 +239,7 @@
     }
 
     .card-content {
-      @apply flex flex-col gap-2 justify-center items-center p-7 dark-gradient rounded-2xl min-h-full;
+      @apply flex flex-col gap-2 justify-center items-center p-7 avatar-gradient text-white rounded-2xl min-h-full;
     }
   }
 
@@ -245,7 +250,7 @@
       @apply dark-gradient rounded-2xl  min-h-12 px-5 py-3 flex items-center justify-center;
 
       p {
-        @apply text-lg text-center text-white;
+        @apply text-lg text-center text-dark-200;
       }
     }
   }
@@ -267,7 +272,7 @@
   }
 
   .card-cta {
-    @apply flex flex-row blue-gradient-dark rounded-3xl px-16 py-6 items-center justify-between max-sm:px-4;
+    @apply flex flex-row dark-gradient rounded-3xl px-16 py-6 items-center justify-between max-sm:px-4;
   }
 
   .interviews-section {
@@ -290,17 +295,21 @@
     @apply dark-gradient rounded-2xl min-h-full flex flex-col p-6 relative overflow-hidden gap-10 justify-between;
 
     .badge-text {
-      @apply text-sm font-semibold capitalize;
+      @apply text-sm font-semibold capitalize text-white;
     }
   }
 }
 
 @utility dark-gradient {
-  @apply bg-gradient-to-b from-[#1A1C20] to-[#08090D];
+  @apply bg-gradient-to-b from-[#ecf0f8] to-[#e4eaf6];
 }
 
 @utility border-gradient {
-  @apply bg-gradient-to-b from-[#4B4D4F] to-[#4B4D4F33];
+  @apply bg-gradient-to-b from-[#c1c3c6] to-[#75767833];
+}
+
+@utility avatar-gradient {
+  @apply bg-gradient-to-b from-[#343434] to-[#1b1b1b];
 }
 
 @utility pattern {
@@ -308,11 +317,11 @@
 }
 
 @utility blue-gradient-dark {
-  @apply bg-gradient-to-b from-[#171532] to-[#08090D];
+  @apply bg-gradient-to-b from-[#022ea8] to-[#1603ee];
 }
 
 @utility blue-gradient {
-  @apply bg-gradient-to-l from-[#FFFFFF] to-[#CAC5FE];
+  @apply bg-gradient-to-l from-[#53a0ff] to-[#3c83ff];
 }
 
 @utility flex-center {

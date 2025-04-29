@@ -36,7 +36,7 @@ const page = async ({params} : RouteParams) => {
         <div className="flex flex-row gap-5">
           {/* Overall Impression */}
           <div className="flex flex-row gap-2 items-center">
-            <Image src="/star.svg" width={22} height={22} alt="star" />
+            <Image src="/star.svg" width={22} height={22} alt="star"/>
             <p>
               Overall Impression:{" "}
               <span className="text-primary-200 font-bold">
@@ -96,7 +96,7 @@ const page = async ({params} : RouteParams) => {
       <div className="buttons">
         <Button className="btn-secondary flex-1">
           <Link href="/" className="flex w-full justify-center">
-            <p className="text-sm font-semibold text-primary-200 text-center">
+            <p className="text-sm font-semibold text-white text-center">
               Back to dashboard
             </p>
           </Link>
@@ -107,7 +107,7 @@ const page = async ({params} : RouteParams) => {
             href={`/interview/${id}`}
             className="flex w-full justify-center"
           >
-            <p className="text-sm font-semibold text-black text-center">
+            <p className="text-sm font-semibold text-white text-center">
               Retake Interview
             </p>
           </Link>
