@@ -184,7 +184,7 @@
     @apply w-fit !bg-blue-500 !text-white hover:!bg-primary-200/80 !rounded-lg !font-bold px-5 cursor-pointer min-h-10;
   }
   .btn-secondary {
-    @apply w-fit !bg-dark-200 !text-light-100 hover:!bg-dark-200/80 !rounded-lg !font-bold px-5 cursor-pointer min-h-10;
+    @apply w-fit !bg-dark-200 !text-white hover:!bg-dark-200/80 !rounded-lg !font-bold px-5 cursor-pointer min-h-10;
   }
 
   .btn-upload {
@@ -211,7 +211,7 @@
     }
 
     .btn {
-      @apply !w-full !bg-primary-200 !text-light-100 hover:!bg-primary-200/80 !rounded-lg !min-h-10 !font-bold !px-5 cursor-pointer;
+      @apply !w-full !bg-primary-200 !text-white hover:!bg-primary-200/80 !rounded-lg !min-h-10 !font-bold !px-5 cursor-pointer;
     }
   }
 

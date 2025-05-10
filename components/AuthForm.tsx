@@ -99,9 +99,8 @@ const formSchema = authFormSchema(type);
                 <Image 
                 src={'logo.svg'} 
                 alt='logo' 
-                height={32} 
-                width={38}/>
-                <h2 className='text-primary-100'>Mantis</h2>
+                height={70} 
+                width={120}/>
             </div>
             
             <h3>Practice Job Interviews with AI</h3>
