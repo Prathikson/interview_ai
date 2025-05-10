@@ -10,7 +10,7 @@
   --color-destructive-100: #ef4444; /* New destructive */
   --color-destructive-200: #dc2626;
 
-  --color-primary-100: #3b82f6;
+  --color-primary-100: #007aff;
   --color-primary-200: #0184e3;
 
   --color-light-100: #d6e0ff;
@@ -151,7 +151,7 @@
     @apply text-dark-100;
   }
   h2 {
-    @apply text-3xl font-semibold;
+    @apply text-3xl font-semibold text-primary-100;
   }
   h3 {
     @apply text-2xl font-semibold;
@@ -219,18 +219,18 @@
     @apply flex sm:flex-row flex-col gap-10 items-center justify-between w-full;
 
     h3 {
-      @apply text-center text-primary-100 mt-5;
+      @apply text-center text-[#1b1b1b] mt-5;
     }
 
     .card-interviewer {
-      @apply flex-center flex-col gap-2 p-7 h-[400px] dark-gradient rounded-lg border-2 border-gradient flex-1 sm:basis-1/2 w-full;
+      @apply flex-center flex-col gap-2 p-7 h-[400px] dark-gradient rounded-lg border-2  flex-1 sm:basis-1/2 w-full;
     }
 
     .avatar {
-      @apply z-10 flex items-center justify-center blue-gradient rounded-full size-[120px] relative;
+      @apply z-10 flex items-center justify-center border-gradient rounded-full size-[120px] relative;
 
       .animate-speak {
-        @apply absolute inline-flex size-5/6 animate-ping rounded-full bg-primary-200 opacity-75;
+        @apply absolute inline-flex size-5/6 animate-ping rounded-full bg-[#1b1b1b] opacity-75;
       }
     }
 
@@ -272,7 +272,7 @@
   }
 
   .card-cta {
-    @apply flex flex-row dark-gradient rounded-3xl px-16 py-6 items-center justify-between max-sm:px-4;
+    @apply flex flex-row dark-gradient border-1 rounded-3xl px-16 py-6 items-center justify-between max-sm:px-4;
   }
 
   .interviews-section {
@@ -292,7 +292,7 @@
   }
 
   .card-interview {
-    @apply dark-gradient rounded-2xl min-h-full flex flex-col p-6 relative overflow-hidden gap-10 justify-between;
+    @apply dark-gradient border-black border-1 rounded-2xl min-h-full flex flex-col p-6 relative overflow-hidden gap-10 justify-between;
 
     .badge-text {
       @apply text-sm font-semibold capitalize text-white;
@@ -301,11 +301,11 @@
 }
 
 @utility dark-gradient {
-  @apply bg-gradient-to-b from-[#ecf0f8] to-[#e4eaf6];
+  @apply bg-gradient-to-b from-[#ffffff] to-[#ffffff];
 }
 
 @utility border-gradient {
-  @apply bg-gradient-to-b from-[#c1c3c6] to-[#75767833];
+  @apply bg-gradient-to-b from-[#0c0c0c] to-[#1b1b1b];
 }
 
 @utility avatar-gradient {
