@@ -6,13 +6,22 @@ import { google } from "@ai-sdk/google";
 import { generateObject } from "ai";
 
 
-export async function getInterviewsByUserId(userId:string) : Promise<Interview[] | null>  {
-    const interviews = await db.collection('interviews').where('userId', '==', userId).orderBy('createdAt', 'desc').get();
+export async function getInterviewsByUserId(userId: string | undefined): Promise<Interview[] | null> {
+  if (!userId) {
+    // userId is undefined or empty, so return null or empty array early
+    return null;
+  }
 
-    return interviews.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data()
-    })) as Interview[];
+  const interviews = await db
+    .collection('interviews')
+    .where('userId', '==', userId)
+    .orderBy('createdAt', 'desc')
+    .get();
+
+  return interviews.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  })) as Interview[];
 }
 
 export async function getLatestInterviews(params: GetLatestInterviewsParams) : Promise<Interview[] | null>  {
