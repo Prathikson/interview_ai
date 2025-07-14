@@ -8,7 +8,6 @@ import { generateObject } from "ai";
 
 export async function getInterviewsByUserId(userId: string | undefined): Promise<Interview[] | null> {
   if (!userId) {
-    // userId is undefined or empty, so return null or empty array early
     return null;
   }
 
