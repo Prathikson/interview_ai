@@ -5,12 +5,14 @@ import React from 'react';
 
 const page = async () => {
     const user = await getCurrentUser();
+    console.log("Current User:", user);
 
   return (
     <>
         <h2>Interview Generation</h2>
 
-        <Agent userName={user?.name} userId={user?.id} type='generate'/>
+        <Agent userName={user?.name ?? "Guest"} userId={user?.id} type="generate" />
+
     </>
   )
 }
